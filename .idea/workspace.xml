@@ -6,7 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1b765390-7c0e-4ec3-bc62-5af9a76a3447" name="Default" comment="lalala_TEST">
+    <list default="true" id="1b765390-7c0e-4ec3-bc62-5af9a76a3447" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dango/model/TestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dango/model/TestModel.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -32,8 +33,8 @@
       <file leaf-file-name="LogAop.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/dango/aop/LogAop.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="17" column="24" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="24" />
+            <state relative-caret-position="487">
+              <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,8 +45,8 @@
       <file leaf-file-name="TestModel.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/dango/model/TestModel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+            <state relative-caret-position="152">
+              <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -207,7 +208,6 @@
         <option value="$PROJECT_DIR$/src/main/java/dango/aop/LogAopBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/dango/aop/Log.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j2.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/dango/aop/LogAop.java" />
         <option value="$PROJECT_DIR$/src/main/java/dango/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/dango/service/impl/TestService.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
@@ -224,6 +224,7 @@
         <option value="$PROJECT_DIR$/src/test/java/SMSTest.java" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/main/java/dango/aop/LogAop.java" />
         <option value="$PROJECT_DIR$/src/main/java/dango/model/TestModel.java" />
       </list>
     </option>
@@ -794,7 +795,7 @@
       <workItem from="1534899368041" duration="2489000" />
       <workItem from="1534986905465" duration="2585000" />
       <workItem from="1535011304895" duration="892000" />
-      <workItem from="1535012230485" duration="3375000" />
+      <workItem from="1535012230485" duration="3759000" />
     </task>
     <task id="LOCAL-00001" summary="lalala_TEST">
       <created>1535015221501</created>
@@ -803,7 +804,28 @@
       <option name="project" value="LOCAL" />
       <updated>1535015221501</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="lalala_TEST">
+      <created>1535015722662</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1535015722663</updated>
+    </task>
+    <task id="LOCAL-00003" summary="lalala_TEST">
+      <created>1535015816866</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1535015816866</updated>
+    </task>
+    <task id="LOCAL-00004" summary="lalala_TEST">
+      <created>1535015920943</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1535015920943</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -839,7 +861,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="365373000" />
+    <option name="totallyTimeSpent" value="365757000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1238,8 +1260,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dango/aop/LogAop.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="17" column="24" selection-start-line="17" selection-start-column="15" selection-end-line="17" selection-end-column="24" />
+        <state relative-caret-position="487">
+          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1248,8 +1270,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dango/model/TestModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        <state relative-caret-position="152">
+          <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
         </state>
       </provider>
     </entry>

@@ -6,5 +6,6 @@ package dango.model;
  * @Description:
  */
 public class TestModel {
-    private  String haha;
+    private String haha;
+    private String lala;
 }
