@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dango.dao.PermissionDao">
+    <resultMap id="permissionResultMap" type="dango.model.PermissionModel">
+        <id column="ID" property="id"/>
+        <result column="PERMISSIONNAME" property="permissionName"/>
+    </resultMap>
+
+    <select id="findAllModel" resultMap="permissionResultMap">
+        select * from YUNJI_PERMISSION
+    </select>
+
+    <select id="findRolePermissions" resultMap="permissionResultMap" parameterType="dango.model.RoleModel">
+        select * from YUNJI_PERMISSION where id in (select YUNJI_PERMISSION_ID from YUNJI_ROLE_PERMISSION where YUNJI_ROLE_ID = #{role.id})
+    </select>
+
+    <select id="findUserPermissions" resultMap="permissionResultMap" parameterType="dango.model.UserModel">
+        select * from YUNJI_PERMISSION where id in (select YUNJI_PERMISSION_ID from YUNJI_ROLE_PERMISSION where YUNJI_ROLE_ID in (select YUNJI_ROLE_ID from YUNJI_SYSUSER_ROLE where YUNJI_SYSUSER_ID = #{user.id}))
+    </select>
+
+</mapper>

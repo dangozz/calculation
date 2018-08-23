@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="dango.dao.RoleDao">
+    <resultMap id="roleResultMap" type="dango.model.RoleModel">
+        <id column="ID" property="id"/>
+        <result column="ROLENAME" property="roleName"/>
+    </resultMap>
+
+    <select id="findAllModel" resultMap="roleResultMap">
+        select * from YUNJI_ROLE
+    </select>
+
+    <select id="findUserRoles" parameterType="dango.model.UserModel" resultMap="roleResultMap">
+        select * from YUNJI_ROLE where id in (select YUNJI_ROLE_ID from YUNJI_SYSUSER_ROLE where YUNJI_SYSUSER_ID=#{user.id})
+    </select>
+
+</mapper>

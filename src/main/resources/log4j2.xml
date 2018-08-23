@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 关闭log4j日志 -->
+<Configuration status="off" monitorInterval="180">
+    <!-- 日志路径 -->
+    <Properties>
+        <!--<property name="LOG_HOME">${web:rootDir}/WEB-INF/logs</property>-->
+        <property name="LOG_HOME">E:/logs</property>
+        <Property name="STDERR_HOME">${LOG_HOME}/stderr/stderr</Property>
+        <Property name="REQUEST_HOME">${LOG_HOME}/request/request</Property>
+        <Property name="SQL_HOME">${LOG_HOME}/sql/sql</Property>
+        <Property name="CACHE_LOG_HOME">${LOG_HOME}/cache/cache</Property>
+        <Property name="AOP_TEST_HOME">${LOG_HOME}/aop/aop</Property>
+    </Properties>
+
+    <!-- 所有appender -->
+    <Appenders>
+        <!-- 定义控制台输出 -->
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="[console] %date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n"/>
+        </Console>
+
+        <!-- 临时调试日志 -->
+        <File name="devLog" append="false"
+              fileName="${CACHE_LOG_HOME}.log">
+            <PatternLayout charset="utf-8"
+                           pattern="[devLog] %date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n"/>
+        </File>
+
+        <!-- 异常日志 -->
+        <RollingFile name="stderr" append="true"
+                     fileName="${STDERR_HOME}.log"
+                     filePattern="${STDERR_HOME}.%d{yyyy-MM-dd-HH}.log">
+            <PatternLayout charset="utf-8" pattern="[stderr] %date{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="500MB"/>
+            </Policies>
+        </RollingFile>
+
+        <!-- 请求日志 -->
+        <RollingFile name="request" append="true"
+                     fileName="${REQUEST_HOME}.log"
+                     filePattern="${REQUEST_HOME}.%d{yyyy-MM-dd-HH}.log">
+            <PatternLayout charset="utf-8" pattern="[request] %date{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="5000MB"/>
+            </Policies>
+        </RollingFile>
+
+        <!-- SQL语句日志数据 -->
+        <RollingFile name="sql" append="true"
+                     fileName="${SQL_HOME}.log"
+                     filePattern="${SQL_HOME}.%d{yyyy-MM-dd-HH}.log">
+            <PatternLayout charset="utf-8" pattern="[sql] %date{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="5000MB"/>
+            </Policies>
+        </RollingFile>
+
+        <!-- AOP_LOG_TEST -->
+        <RollingFile name="aop" append="true"
+                     fileName="${AOP_TEST_HOME}.log"
+                     filePattern="${AOP_TEST_HOME}.%d{yyyy-MM-dd-HH}.log">
+            <PatternLayout charset="utf-8" pattern="[sql] %date{yyyy-MM-dd HH:mm:ss.SSS} - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="5000MB"/>
+            </Policies>
+        </RollingFile>
+    </Appenders>
+
+    <!-- 在logger中引用appender -->
+    <Loggers>
+        <!-- 屏蔽spring 和 mybatis 的debug信息 -->
+        <Logger name="org.springframework" level="INFO"/>
+        <Logger name="dango.dao.mapper" level="DEBUG"/>
+
+        <Logger name="dango.dao" level="All">
+            <AppenderRef ref="sql"/>
+        </Logger>
+        <Logger name="dango.aop" level="All" >
+            <AppenderRef ref="aop"/>
+        </Logger>
+        <Logger name="dango.*" level="Warn">
+            <AppenderRef ref="stderr"/>
+        </Logger>
+        <Root level="DEBUG">
+            <AppenderRef ref="devLog"/>
+            <AppenderRef ref="console"/>
+        </Root>
+    </Loggers>
+</Configuration>
