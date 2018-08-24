@@ -7,4 +7,5 @@ package dango.model;
  */
 public class IDEABranch {
     private String string="IDEA2";
+    
 }
