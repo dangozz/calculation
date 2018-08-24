@@ -11,6 +11,13 @@
     <import resource="spring-rabbitmq.xml"/>
     <context:component-scan base-package="*.service.impl,*.shiro,*.shiro.realm,*.rabbit,*.controller"/>
 
+
+    <aop:aspectj-autoproxy proxy-target-class="true">
+        <aop:include name="logAopBean"/>
+        <aop:include name="MyComponent"/>
+    </aop:aspectj-autoproxy>
+
+    <!--两个切面有相同的方法(before) 执行顺序按照下面顺序进行(bean初始化的顺序)-->
+    <bean id="MyComponent" class="dango.aop.test.AopTest"/>
     <bean id="logAopBean" class="dango.aop.LogAop"/>
-    <aop:aspectj-autoproxy/>
 </beans>

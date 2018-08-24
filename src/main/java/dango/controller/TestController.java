@@ -4,6 +4,7 @@ import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import dango.aop.test.MyComponent;
 import dango.model.UserModel;
 import dango.rabbit.ProducerService;
 import dango.service.RoleService;
@@ -146,6 +147,7 @@ public class TestController {
         return "2";
     }
 
+    @MyComponent
     @RequestMapping("3.do")
     @RequiresPermissions("test:3")
     public String Test3(){
@@ -154,6 +156,7 @@ public class TestController {
         return "3";
     }
 
+    @MyComponent(desc = "desc1")
     @RequestMapping("4.do")
     @RequiresPermissions("test:4")
     public String Test4(){
