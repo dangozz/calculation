@@ -6,7 +6,7 @@ package dango.model;
  * @Description:
  */
 public class IDEABranch {
-    private String string="IDEA22222222222222222222";
+    private String string="IDEA222222222222222222223";
     private String string2="dango";
     private String string3="dango2";
 }
