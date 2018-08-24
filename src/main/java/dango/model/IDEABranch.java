@@ -6,5 +6,5 @@ package dango.model;
  * @Description:
  */
 public class IDEABranch {
-    private String string="IDEA";
+    private String string="IDEA2";
 }
