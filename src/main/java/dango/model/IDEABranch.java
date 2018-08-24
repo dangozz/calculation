@@ -8,4 +8,5 @@ package dango.model;
 public class IDEABranch {
     private String string="IDEA2";
     private String string2="dango";
+    private String string3="dango2";
 }
