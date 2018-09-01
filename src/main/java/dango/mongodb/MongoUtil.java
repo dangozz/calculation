@@ -128,6 +128,15 @@ public class MongoUtil {
             System.out.println(cursor.next().toString());
         }
 
+        System.out.println("\n 多条件组合查询");
+
+        cursor=runoobCollection.find(bson3).iterator();
+        while (cursor.hasNext()){
+            System.out.println(cursor.next().toString());
+        }
+
+
+
         System.out.println("\n 修改数据");
         cursor=runoobCollection.find(bson).iterator();
         while (cursor.hasNext()){

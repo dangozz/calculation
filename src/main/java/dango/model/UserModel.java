@@ -1,8 +1,11 @@
 package dango.model;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.List;
 
+@Data
 public class UserModel implements Serializable {
 
     private static final long serialVersionUID = 5231134212346077681L;
@@ -22,49 +25,8 @@ public class UserModel implements Serializable {
         this.salt = salt;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getSalt() {
-        return salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt;
-    }
-
     public String getRealSalt(){
         return username+salt;
     }
 
-    @Override
-    public String toString() {
-        return "UserModel{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", salt='" + salt + '\'' +
-                '}';
-    }
 }
