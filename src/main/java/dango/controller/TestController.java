@@ -163,4 +163,10 @@ public class TestController {
         return "4";
     }
 
+    @RequestMapping("5.do")
+    @RequiresPermissions("test:1")
+    public String Tes5(){
+        System.out.println(testService.test2("DANGO_"));
+        return "5";
+    }
 }

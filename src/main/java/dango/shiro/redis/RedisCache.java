@@ -19,7 +19,6 @@ import java.util.concurrent.Callable;
  * @date 2018/7/11 10:32
  * @Description:
  */
-@Component
 public class RedisCache implements Cache {
 
     private RedisTemplate<String, Object> redisTemplate;
@@ -78,6 +77,7 @@ public class RedisCache implements Cache {
                     System.out.println("------缓存不存在-------");
                     return null;
                 }
+                logger.info("获取1---------------------"+value);
                 System.out.println(SerializeUtils.deserialize(value));
                 return SerializeUtils.deserialize(value);
             }
@@ -92,15 +92,15 @@ public class RedisCache implements Cache {
     public void put(Object key, Object value) {
         logger.info("-------缓存增加------"+key+value);
         System.out.println("-------缓存增加------");
-        System.out.println("key----:"+key);
+        System.out.println("redisKey----:"+key);
         System.out.println("value----:"+value);
         final String keyString = key.toString();
-        final String valuef = value.toString();
+        final Object valuef = value;
         redisTemplate.execute(new RedisCallback<Long>() {
             @Override
             public Long doInRedis(RedisConnection connection) throws DataAccessException {
                 byte[] keyb = keyString.getBytes();
-                byte[] valueb = valuef.getBytes();
+                byte[] valueb = SerializeUtils.serialize((Serializable) valuef);
                 connection.set(keyb, valueb);
                 if (expireTime > 0) {
                     connection.expire(keyb, expireTime);
@@ -152,7 +152,7 @@ public class RedisCache implements Cache {
     public void putWithTime(Object key, Object value,final long time){
         logger.info("-------缓存增加------"+key+value+time);
         System.out.println("-------缓存增加------");
-        System.out.println("key----:"+key);
+        System.out.println("redisKey----:"+key);
         System.out.println("value----:"+value);
         System.out.println("time----:"+time);
         final String keyString = key.toString();

@@ -21,15 +21,19 @@ public class SMSTest {
         // 用户平台API密码(非登录密码)
         public static String pswd = "";
 
-        public static void main(String[] args) throws Exception {
+        public static void main(String[] args) {
+                int result = test();
+                System.out.println(result);
 
-//                String result="";
-//                String line;
-//                while ((line = in.readLine()) != null) {
-//                        result += line;
-//                }
-//                System.out.println(in.readLine());
+        }
 
+        public static int test() {
+                int t = new Integer(555);
+                try {
+                        return t;
+                } finally {
+                        t++;
+                }
         }
 
 }
